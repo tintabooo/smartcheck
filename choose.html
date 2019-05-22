@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>เลือกรายวิชา</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-card *ngFor="let item of courses | async" (click)="onClickCourse(item.name)" color="dark">
+      <ion-card-header>
+        {{ item.name }}
+      </ion-card-header>
+      <ion-card-content>
+        รหัสวิชา : {{ item.org }}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list padding text-center>
+    <button ion-button color="secondary" (click)="goToAddsubject()">เพิ่มรายวิชา</button>
+    <button ion-button color="danger" (click)="goToHome()">กลับหน้าแรก</button>
+  </ion-list>
+  
+</ion-content>

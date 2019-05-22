@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>เพิ่มรายวิชา</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <form [formGroup]="course">
+      <ion-item>
+        <ion-label position="fixed">ชื่อวิชา :</ion-label>
+        <ion-input type="text" placeholder="กรอกข้อมูล" formControlName="course_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">รหัสวิชา :</ion-label>
+        <ion-input type="text" placeholder="กรอกข้อมูล" formControlName="course_no"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">ห้องเรียน :</ion-label>
+        <ion-input type="text" placeholder="กรอกข้อมูล" formControlName="course_room"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">เวลาเข้าเรียน :</ion-label>
+        <!-- <ion-input type="time" placeholder="กรอกข้อมูล" formControlName="course_starttime"></ion-input> -->
+        <ion-datetime displayFormat="HH:mm น." pickerFormat="HH mm" placeholder="เลือกเวลา" formControlName="course_starttime"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">ระยะเวลาในการเช็คสาย :</ion-label>
+        <ion-input type="number" placeholder="กรอกข้อมูลเวลาเข้าเรียนสาย (นาที)" formControlName="course_timecheck"></ion-input>
+      </ion-item>
+      <br>
+      <div class="showhead">
+        <button color="danger" ion-button block (click)="goToChoose()">
+          ยืนยัน
+        </button>
+      </div>
+    </form>
+  </ion-list>
+</ion-content>

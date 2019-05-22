@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>เงื่อนไขการเข้าเรียน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      ชื่อวิชา {{ (data | async)?.name }}
+    </ion-item>
+    <ion-item>
+      รหัสวิชา {{ (data | async)?.org }}
+    </ion-item>
+    <ion-item>
+      ห้องเรียน {{ (data | async)?.room }}
+    </ion-item>
+    <ion-item>
+      เวลาเข้าเรียน {{ (data | async)?.time }}
+    </ion-item>
+    <ion-item>
+      ระยะเวลาในการเช็คสาย {{ (data | async)?.late }} นาที
+    </ion-item>
+    <!-- <ion-item>
+      เปอร์เซ็นต์การมีสิทธิ์สอบ {{ (data | async)?.exam }}
+    </ion-item>-->
+    
+  </ion-list>
+
+  <button color="danger" ion-button block (click) ="goToHome()">กลับหน้าแรก</button>
+  <button style="background-color: red;" ion-button block (click) ="onClickRemoveCourse()"
+  (click)="showAlert()" >ลบรายวิชา</button>
+  
+</ion-content>

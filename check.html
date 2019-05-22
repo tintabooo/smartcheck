@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      เช็คชื่อนักศึกษาเข้าเรียน
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <h1>เวลาขณะนี้ : {{dateTime| date:'HH:mm:ss'}}</h1>
+    </ion-item>
+
+    <ion-item>
+      <button color="danger" ion-button block large (click)="onClickSCAN()">
+        <ion-icon name="qr-scanner"> สแกนบาร์โค้ดสองมิติ</ion-icon>
+      </button>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

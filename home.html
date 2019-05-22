@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      ระบบเช็คชื่อเข้าเรียนด้วยบาร์โค้ดสองมิติ
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="showhead">
+    <img src="assets/imgs/logoqrcode1.png">
+    <h3>ยินดีต้อนรับเข้าสู่ระบบเช็คชื่อ</h3>
+  </div>
+  <ion-list>
+    <ion-item (click)="goToChoose()" (click)="presentLoading()">
+      <ion-icon name="ios-book" item-start color="danger"></ion-icon>
+      แก้ไขรายวิชา
+    </ion-item>
+    <!-- <ion-item (click)="goToConditionPage()">
+      <ion-icon name="ios-hammer" item-start></ion-icon>เงื่อนไขการเข้าเรียน
+    </ion-item> -->
+    <ion-item (click)="goToChoosecheck()" (click)="presentLoading()">
+      <ion-icon name="camera" item-start color="danger"></ion-icon>
+      เช็คชื่อนักศึกษา
+    </ion-item>
+    <ion-item (click)="goToConcludesubject()" (click)="presentLoading()">
+      <ion-icon name="md-stats" item-start color="danger"></ion-icon>
+      รายงานผลการเข้าเรียน
+    </ion-item>
+    <!--<ion-item (click)="goToReportPage()">
+      <ion-icon name="ios-calendar" item-start color="danger"></ion-icon>รายงานย้อนหลัง
+    </ion-item> -->
+    <ion-item (click)="onLogout()">
+      <ion-icon name="md-power" item-start color="danger"></ion-icon>
+      ออกจากระบบ
+    </ion-item>
+
+  </ion-list>
+</ion-content>

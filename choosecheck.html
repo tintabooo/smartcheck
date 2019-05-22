@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>เช็คชื่อ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item text-center>
+      <h2>เลือกรายวิชาที่ต้องการเช็คชื่อ</h2>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-card *ngFor="let item of courses | async" (click)="goToCheck(item)" color="dark" (click)="presentLoading()">
+      <ion-card-header>
+        {{ item.name }}
+      </ion-card-header>
+      <ion-card-content>
+        รหัสวิชา : {{ item.org }}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <!-- <button ion-button color="danger" (click)="goToHome()">กลับหน้าแรก</button> -->
+
+</ion-content>

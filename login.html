@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      เข้าสู่ระบบ
+    </ion-title>
+   </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<div class="showhead">
+  <img src="assets/imgs/logoqrcode1.png">
+  <h3>กรุณาเข้าสู่ระบบ</h3>
+</div>
+
+<ion-list>
+  
+  <ion-item>
+    <ion-label>กรอกชื่อผู้ใช้</ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>กรอกรหัสผ่าน</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+  
+  <ion-item *ngIf="message">
+    <ion-label color="red">{{ message }}</ion-label>
+  </ion-item>
+</ion-list>
+
+<div padding>
+  <button ion-button block color="danger" (click)="onLogin()">เข้าสู่ระบบ</button>
+</div>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>รายงานผลการเข้าเรียน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item style="border-bottom: double #f16022;">
+      <ion-label>ค้นหาจากวันที่: </ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" placeholder="เลือกวันที่" [(ngModel)]="inputDate"
+        (ionChange)="onChangeDate()"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of checks | async">
+      <ion-label style="white-space: normal; font-size: 14px;">
+        <span [style.color]="item.color">
+          รหัสนักศึกษา: {{ item.student_id }} [ เข้าเรียนวันที่/เวลา: {{ item.created_at.toDate() | date: 'dd/MM/yyyy
+          H:mm' }} ]
+        </span>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
